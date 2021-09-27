@@ -1,15 +1,40 @@
 <!DOCTYPE html>
 <html>
-<head>
+    <head></head>
+
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Repaso Tarea 6a</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='tarea6a.css'>
 </head>
+
 <body>
-    
+    <div id="contenedorFormulario">
+        <form id="formularioEdades">
+            <div id="cuestionarioCantidadintegrantes">
+                <label>Cuantos integrantes hay en tu familia?</label>
+                <input class="cantidadIntegrantes" type="number">
+                <button type="button">Siguiente</button>
+            </div>
+        
+            <div id="integrantes">
+
+            <button id="calculoEdades" class="oculto">Calcular</button>
+
+            <div id="resultadosEdades" class="oculto">
+                <p>La mayor edad en la familia es de: <strong class="mayor-edad"></strong></p>
+                <p>La menor edad en la familia es de: <strong class="menor-edad"></strong></p>
+                <p>El promedio de edad en la familia es de: <strong class="promedio-edad"></strong></p>
+            </div>
+
+            <button type="reset">Resetear</button>
+        </form>
+    </div>
+
     <script src='funcionesTarea6a.js'></script>
     <script src='tarea6a.js'></script>
 </body>
+
 </html>
+

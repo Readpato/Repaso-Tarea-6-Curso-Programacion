@@ -2,9 +2,9 @@
 
 Pseudocodigo:
 
-- Crear un cuerpo de html en donde haya un form adentro.
-- Como instancia inicial, dentro del form crear un input que sea intendido en preguntar la cantidad de integrantes del grupo familiar,
-tambien crear un boton que pueda decir siguiente para avanzar el proceso.
+- Crear un body de html en donde haya un form adentro.
+- Como instancia inicial, dentro del form crear un input que pregunte la cantidad de integrantes del grupo familiar.
+- Crear un boton que pueda decir siguiente para avanzar el proceso.
 - Una vez ingresada la cantidad de personas, crear labels e inputs de la misma cantidad. (Pueden ser creado con .createElement!)
 - Agregar un boton (que estara escondido al principio)  - llamado "calcular" - que al ser interactuado calcule:
 
@@ -18,5 +18,8 @@ Crear boton de resetear que empieze todo el proceso desde cero (display: 0 / .re
 
 Punto bonus! 
 Cuando el boton siguiente sea llamado, remover los integrantes pasados!
+
+Notas:
+    - Sera mejor intentar de escribir el cuerpo osea HTML y CSS, y despues de eso agregarle la funcionalidad con JS?
 
 */
