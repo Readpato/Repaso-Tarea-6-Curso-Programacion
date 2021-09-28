@@ -2,7 +2,7 @@
 
 Pseudocodigo:
 
-- Crear un body de html en donde haya un form adentro.
+- Crear un body de html en donde se encuentre un form adentro.
 - Como instancia inicial, dentro del form crear un input que pregunte la cantidad de integrantes del grupo familiar.
 - Crear un boton que pueda decir siguiente para avanzar el proceso.
 - Una vez ingresada la cantidad de personas, crear labels e inputs de la misma cantidad. (Pueden ser creado con .createElement!)
