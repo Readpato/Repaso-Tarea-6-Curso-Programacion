@@ -42,9 +42,21 @@ eliminarIntegrantesAnteriores();
 crearIntegrantes($cantidadIntegrantes);
 
 event.preventDefault();
+
 }
 
+
+//Acciones que sucede cuando el boton de resetear es clickead
+
+
+document.querySelector('#botonReseteoEjercicio').onclick = function(event) {
+    resetear();
+    event.preventDefault();
+}
+
+
 //Funcion que elimina los integrantes de la ejecucion pasada del ejercicio
+
 function eliminarIntegrantesAnteriores() {
     
     const $integrantes = document.querySelectorAll('.integrantes');
@@ -56,13 +68,15 @@ function eliminarIntegrantesAnteriores() {
 
 
 //Funcion que crea la cantidad de casilleros de los integrantes
+
 function crearIntegrantes(cantidadIntegrantes) {
 
     if (cantidadIntegrantes > 0) {
         mostrarBotonCalculo();
         mostrarIntegrantes(); //cambia el display
+        ocultarTextoResultado();
     } else {
-        //resetear(); 
+        resetear(); 
     }
 
     for( let i = 0;  i < cantidadIntegrantes; i++){
@@ -99,7 +113,7 @@ function mostrarBotonCalculo() {
 //Funcion que oculta el boton de calculo
 
 function ocultarbotonCalculo() {
-    document.querySelector('#calculoEdades').classname = 'oculto';
+    document.querySelector('#calculoEdades').className = 'oculto';
 }
 
 //Funcion que muestra los casilleros de los integrantes
@@ -118,6 +132,27 @@ function ocultarIntegrantes() {
 //Funcion que oculta el texto de los resultados
 
 function ocultarTextoResultado() {
+    document.querySelector('#resultadosEdades').className = 'oculto';
+}
+
+//Funcion que muestra el texto de los resultados
+
+function mostrarTextoResultado() {
+    document.querySelector('#resultadosEdades').className = '';
+}
+
+function vaciarValorInput() {
+    document.querySelector('.cantidadIntegrantes').value = '';
+}
+
+//Acciones que suceden una vez que se toqua el boton de calculo
+
+document.querySelector('#calculoEdades').onclick = function(event) {
+
+    mostrarTextoResultado();
+
+
+    event.preventDefault();
 }
 
 /*
@@ -129,9 +164,14 @@ Funcion resetear
 
 */
 
-
 function resetear() {
     eliminarIntegrantesAnteriores();
-
+    ocultarbotonCalculo();
+    ocultarIntegrantes();
+    ocultarTextoResultado();
+    vaciarValorInput();
 }
+
+
+
 
