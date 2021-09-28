@@ -2,3 +2,7 @@ body {
     background-color: maroon;
     color: gold
 }
+
+.oculto {
+    display: none;
+}

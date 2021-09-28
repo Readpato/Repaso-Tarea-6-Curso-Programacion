@@ -23,3 +23,41 @@ Notas:
     - Sera mejor intentar de escribir el cuerpo osea HTML y CSS, y despues de eso agregarle la funcionalidad con JS?
 
 */
+
+
+//Acciones que sucede cuando el boton siguiente es clickeado
+document.querySelector('.botonSiguiente').onclick =  function(event) {
+
+const $cantidadIntegrantes = document.querySelector('.cantidadIntegrantes').value;
+
+eliminarIntegrantesAnteriores();
+crearIntegrantes($cantidadIntegrantes);
+
+event.preventDefault();
+}
+
+//Funcion que elimina los integrantes de la ejecucion pasada del ejercicio
+function eliminarIntegrantesAnteriores() {}
+
+
+//Funcion que crea la cantidad de casilleros de los integrantes
+function crearIntegrantes(cantidadIntegrantes) {
+
+    if (cantidadIntegrantes > 0) {
+        mostrarBotonCalculo();
+        mostrarIntegrantes();
+    } else {
+        resetear();
+    }
+
+    for( let i = 0;  i < cantidadIntegrantes; i++){
+        crearCasilleroIntegrantes(i)
+    }
+}
+
+//Funcion que muestra el boton calculo
+
+function mostrarBotonCalculo() {
+    document.querySelector('#calculoEdades').className = '';
+}
+
