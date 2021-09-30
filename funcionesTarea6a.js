@@ -24,7 +24,7 @@ function calcularEdadpromedio(array) {
     for ( n = 0; n < array.length; n++) {
         salarioTotal = salarioTotal + array[n];
     }
-    return salarioTotal / array.length;
+    return (salarioTotal / array.length).toFixed(2);
 
 }
 
