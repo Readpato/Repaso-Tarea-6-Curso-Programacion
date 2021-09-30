@@ -2,7 +2,7 @@
 
 Pseudocodigo:
 
-- Crear un body de html en donde se encuentre un form adentro.
+- Crear un archuvo de html en donde dentro del body se encuentre un form adentro.
 - Como instancia inicial, dentro del form crear un input que pregunte la cantidad de integrantes del grupo familiar.
 - Crear un boton que pueda decir siguiente para avanzar el proceso.
 - Una vez ingresada la cantidad de personas, crear labels e inputs de la misma cantidad. (Pueden ser creado con .createElement!)
@@ -149,15 +149,18 @@ function vaciarValorInput() {
 
 document.querySelector('#calculoEdades').onclick = function(event) {
 
+    const numeros = obtenerEdadesIntegrantes();
+    mostrarEdad('mayor', calcularEdadMayor(numeros));
+    mostrarEdad('menor', calcularEdadMenor(numeros));
+    mostrarEdad('promedio', calcularEdadpromedio(numeros));
     mostrarTextoResultado();
-
 
     event.preventDefault();
 }
 
 /*
 Funcion resetear
--Borrar los integrantes anteriores eliminarIntegrantesAnteriores();
+- Borrar los integrantes anteriores eliminarIntegrantesAnteriores();
 - Ocultar los botones de calculo
 - Ocultar los integrantes
 - Ocultar texto resultados
@@ -173,5 +176,18 @@ function resetear() {
 }
 
 
+//Funcion que mete todas las edades de los integrantes en un array
 
+function obtenerEdadesIntegrantes() {
+    const $integrantes = document.querySelectorAll('.integrantes input');
+    const edades = [];
+
+    for ( let z = 0; z < $integrantes.length; z++) {
+        if ($integrantes[z].value === '') {
+            continue
+        }
+        edades.push(Number($integrantes[z].value));
+    }
+    return edades;
+}
 
