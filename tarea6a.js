@@ -39,6 +39,7 @@ document.querySelector('.botonSiguiente').onclick =  function(event) {
 const $cantidadIntegrantes = document.querySelector('.cantidadIntegrantes').value;
 
 eliminarIntegrantesAnteriores();
+validarIntegrantesFamiliares($cantidadIntegrantes);
 crearIntegrantes($cantidadIntegrantes);
 
 event.preventDefault();
@@ -189,5 +190,19 @@ function obtenerEdadesIntegrantes() {
         edades.push(Number($integrantes[z].value));
     }
     return edades;
+}
+
+
+
+//Funcion que valida los integrantes familiares iniciales
+
+function validarIntegrantesFamiliares(integrantes) {
+     const regEx = /[0-9]{2}$/;
+
+    if (regEx.test(integrantes) === false) {
+        return 'Ingresaste un caracter invalido';
+    }
+
+    return ''
 }
 
