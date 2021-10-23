@@ -24,7 +24,6 @@ Notas:
 
 */
 
-
 /*
 
 Acciones que sucede cuando el boton siguiente es clickeado
@@ -38,12 +37,13 @@ document.querySelector('.botonSiguiente').onclick =  function(event) {
 
 const $cantidadIntegrantes = document.querySelector('.cantidadIntegrantes').value;
 
+
 eliminarIntegrantesAnteriores();
-validarIntegrantesFamiliares($cantidadIntegrantes);
-crearIntegrantes($cantidadIntegrantes);
+validarInputIntegrantes($cantidadIntegrantes); //Esta funcion tendria que tener los crear integrantes adentro
+//crearIntegrantes($cantidadIntegrantes);
+
 
 event.preventDefault();
-
 }
 
 
@@ -77,7 +77,7 @@ function crearIntegrantes(cantidadIntegrantes) {
         mostrarIntegrantes(); //cambia el display
         ocultarTextoResultado();
     } else {
-        resetear(); 
+        //resetear(); 
     }
 
     for( let i = 0;  i < cantidadIntegrantes; i++){
@@ -197,12 +197,26 @@ function obtenerEdadesIntegrantes() {
 //Funcion que valida los integrantes familiares iniciales
 
 function validarIntegrantesFamiliares(integrantes) {
-     const regEx = /[0-9]{2}$/;
+     const regEx = /^[0-9]{1,2}$/;
 
-    if (regEx.test(integrantes) === false) {
+    if (!regEx.test(integrantes)) {
         return 'Ingresaste un caracter invalido';
     }
 
-    return ''
+    return '';
+}
+
+//Funcion que valida el input integrantes
+
+function validarInputIntegrantes(integrantes) {
+    //const integrantes = $form["cantidad-integrantes"].value;
+
+    const errorIntegrantes = validarIntegrantesFamiliares(integrantes);
+
+    const error = {
+        integrantesFamiliares: errorIntegrantes
+    }
+
+    console.log(error);
 }
 
