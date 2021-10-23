@@ -33,6 +33,14 @@ Acciones que sucede cuando el boton siguiente es clickeado
 
 */
 
+
+//Funciones globales
+
+const $form = document.formulario;
+
+//
+
+
 document.querySelector('.botonSiguiente').onclick =  function(event) {
 
 const $cantidadIntegrantes = document.querySelector('.cantidadIntegrantes').value;
@@ -212,11 +220,56 @@ function validarInputIntegrantes(integrantes) {
     //const integrantes = $form["cantidad-integrantes"].value;
 
     const errorIntegrantes = validarIntegrantesFamiliares(integrantes);
+    const $integrantes = $form["cantidad-integrantes"].value;
 
-    const error = {
-        integrantesFamiliares: errorIntegrantes
+    const errores = {
+        "cantidad-integrantes": errorIntegrantes
     }
 
-    console.log(error);
+    const esExitoIntegrantes =  manejarErrores(errores) === 0 ;
+
+    if (esExitoIntegrantes){
+        crearIntegrantes($integrantes);
+    }
+
+    return errores;
 }
+
+//Manejar Errores
+
+
+function manejarErrores(errores) {
+    const error = errores;
+    const key = Object.keys(error);
+    let cantidadErrores = 0;
+
+    key.forEach(function(key) {
+        
+        if(error[key]) {
+            $form[key].classList.add('error');
+            cantidadErrores++
+        } else {
+            $form[key].classList.remove('error');
+        }
+    })
+
+    return cantidadErrores;
+}
+
+
+
+const person = {
+    name: 'Patrick',
+    age: '25'
+};
+
+console.log(person);
+
+const keys = Object.keys(person);
+
+console.log(keys);
+
+keys.forEach(function(key){
+    console.log(person[key])
+})
 
