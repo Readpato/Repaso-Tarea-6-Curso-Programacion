@@ -11,10 +11,10 @@
 
 <body>
     <div id="contenedorFormulario">
-        <form id="formularioEdades">
+        <form id="formularioEdades" name="formulario">
             <div id="cuestionarioCantidadintegrantes">
                 <label>Cuantos integrantes hay en tu familia?</label>
-                <input class="cantidadIntegrantes" type="number">
+                <input class="cantidadIntegrantes" name="cantidad-integrantes" type="number">
                 <button type="button" class="botonSiguiente">Siguiente</button>
             </div>
         
@@ -29,11 +29,17 @@
             </div>
 
             <button type="reset" id="botonReseteoEjercicio">Resetear</button>
+
+            <div id="compilacionErrores">
+                <ul class="errores">
+                </ul>
+            </div>
         </form>
     </div>
 
     <script src='funcionesTarea6a.js'></script>
     <script src='tarea6a.js'></script>
+    <script src="pruebasUnitarias.js"></script>
 </body>
 
 </html>
