@@ -207,12 +207,6 @@ function obtenerEdadesIntegrantes() {
 function validarIntegrantesFamiliares(integrantes) {
      const regEx = /^[0-9]{1,2}$/;
 
-
-     /*
-    ! Find out why this triggers the console.assert error.
-
-     */
-
     if (integrantes === '')
         return 'No ingresaste ningun caracter.';
 
@@ -220,6 +214,22 @@ function validarIntegrantesFamiliares(integrantes) {
         return 'Ingresaste un caracter invalido.';
     }
 
+    return '';
+}
+
+
+//Funcion que valida las edades de los integrantes familaires
+
+function validarEdadesIntegrantesFamiliares(edadIntegrantes) {
+    const regEx = /^[0-9]{1,2}$/;
+
+    if (edadIntegrantes === '')
+        return 'No ingresaste ningun caracter.';
+
+    if (regEx.test(edadIntegrantes) === false) {
+        return 'Ingresaste un caracter invalido.';
+    }
+    
     return '';
 }
 
