@@ -2,7 +2,7 @@
 
 Pseudocodigo:
 
-- Crear un archuvo de html en donde dentro del body se encuentre un form adentro.
+- Crear un archivo de html en donde dentro del body se encuentre un form adentro.
 - Como instancia inicial, dentro del form crear un input que pregunte la cantidad de integrantes del grupo familiar.
 - Crear un boton que pueda decir siguiente para avanzar el proceso.
 - Una vez ingresada la cantidad de personas, crear labels e inputs de la misma cantidad. (Pueden ser creado con .createElement!)
@@ -247,6 +247,17 @@ function manejarErrores(errores) {
         
         if(error[key]) {
             $form[key].classList.add('error');
+            $form[key].value = '';
+
+            const $errores = document.querySelector('.errores')
+            const $error = document.createElement('li');
+
+            $error.textContent = error[key];
+            console.log($error);
+            $errores.appendChild($error);
+            $errores.classList.toggle('oculto');
+
+            
             cantidadErrores++
         } else {
             $form[key].classList.remove('error');
@@ -257,7 +268,7 @@ function manejarErrores(errores) {
 }
 
 
-
+/*
 const person = {
     name: 'Patrick',
     age: '25'
@@ -273,3 +284,4 @@ keys.forEach(function(key){
     console.log(person[key])
 })
 
+*/

@@ -1,17 +1,16 @@
 body {
-    background-color: maroon;
-    color: gold
+  background-color: white;
+  color: black;
 }
 
 .oculto {
-    display: none;
+  display: none;
 }
 
 .error {
-    border: 2px solid red;
+  border: 2px solid red;
 }
 
 .no-error {
-    border: 2px solid green;
+  border: 2px solid green;
 }
-
