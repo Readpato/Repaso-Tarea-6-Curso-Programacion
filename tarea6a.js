@@ -207,8 +207,17 @@ function obtenerEdadesIntegrantes() {
 function validarIntegrantesFamiliares(integrantes) {
      const regEx = /^[0-9]{1,2}$/;
 
-    if (!regEx.test(integrantes)) {
-        return 'Ingresaste un caracter invalido';
+
+     /*
+    ! Find out why this triggers the console.assert error.
+
+     */
+
+    if (integrantes === '')
+        return 'No ingresaste ningun caracter.';
+
+    if (regEx.test(integrantes) === false) {
+        return 'Ingresaste un caracter invalido.';
     }
 
     return '';
@@ -246,21 +255,19 @@ function manejarErrores(errores) {
     key.forEach(function(key) {
         
         if(error[key]) {
-            $form[key].classList.add('error');
+            $form[key].className = ('error');
             $form[key].value = '';
 
-            const $errores = document.querySelector('.errores')
+            const $errores = document.querySelector('#errores')
             const $error = document.createElement('li');
 
             $error.textContent = error[key];
             console.log($error);
             $errores.appendChild($error);
-            $errores.classList.toggle('oculto');
-
             
             cantidadErrores++
         } else {
-            $form[key].classList.remove('error');
+            $form[key].className = '';
         }
     })
 
